@@ -1,0 +1,1 @@
+console.log('Instagram Clone JS loaded');
