@@ -1,0 +1,10 @@
+{
+  "files": {
+    "main.js": "/insta/static/js/main.5407dba3.js",
+    "index.html": "/insta/index.html",
+    "main.5407dba3.js.map": "/insta/static/js/main.5407dba3.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.5407dba3.js"
+  ]
+}
