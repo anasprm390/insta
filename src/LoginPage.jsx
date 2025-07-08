@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./LoginPage.css";
-import newMockup from './new-mockup.png';
+
 
 
 // Simulated Firebase-like functions for demo purposes
@@ -45,29 +45,7 @@ const mockProviders = {
   google: { type: 'google' }
 };
 
-// Demo screenshots data
-const screenshots = [
-  {
-    id: 1,
-    gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
-    content: { title: "Share Your Story", subtitle: "Connect with friends worldwide" }
-  },
-  {
-    id: 2,
-    gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
-    content: { title: "Capture Moments", subtitle: "Beautiful memories await" }
-  },
-  {
-    id: 3,
-    gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
-    content: { title: "Explore Together", subtitle: "Discover amazing content" }
-  },
-  {
-    id: 4,
-    gradient: "linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)",
-    content: { title: "Create Magic", subtitle: "Express your creativity" }
-  }
-];
+
 
 export default function LoginPage() {
   const [userInput, setUserInput] = useState("");
@@ -76,7 +54,7 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
-  const [currentScreenshot, setCurrentScreenshot] = useState(0);
+
   const [inputFocused, setInputFocused] = useState({ user: false, password: false });
   const [formAttempts, setFormAttempts] = useState(0);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
@@ -85,14 +63,7 @@ export default function LoginPage() {
   const userInputRef = useRef(null);
   const passwordRef = useRef(null);
 
-  // Screenshot carousel effect
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentScreenshot((prev) => (prev + 1) % screenshots.length);
-    }, 3000);
-    
-    return () => clearInterval(interval);
-  }, []);
+
 
   // Online/offline detection
   useEffect(() => {
@@ -397,79 +368,41 @@ export default function LoginPage() {
     <div className="login-wrapper">
       <div className="main-content">
         <div className="phone-mockup">
-          <div className="phone-container"><div className="phone-container">
-  <div
-    className="phone-mockup-bg"
-    style={{
-      backgroundImage: `url(${newMockup})`,
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      backgroundSize: 'contain'
-    }}
-  />
-  
-  <div className="phone-screenshots" style={{ position: 'relative', zIndex: 2 }}>
-    {screenshots.map((shot, idx) => (
-      <div
-        key={shot.id}
-        className={`screenshot screenshot-${shot.id} ${currentScreenshot === idx ? 'active' : ''}`}
-        style={{ background: shot.gradient }}
-      >
-        <div style={{ padding: '32px 16px' }}>
-          <div style={{ fontSize: 24, fontWeight: 600, marginBottom: 8 }}>{shot.content.title}</div>
-          <div style={{ fontSize: 16, fontWeight: 400 }}>{shot.content.subtitle}</div>
-        </div>
-      </div>
-    ))}
-  </div>
-</div>
-
-            <div className="phone-screenshots">
-              {screenshots.map((shot, idx) => (
-                <div
-                  key={shot.id}
-                  className={`screenshot screenshot-${shot.id} ${currentScreenshot === idx ? 'active' : ''}`}
-                  style={{ background: shot.gradient }}
-                >
-                  <div style={{ padding: '32px 16px' }}>
-                    <div style={{ fontSize: 24, fontWeight: 600, marginBottom: 8 }}>{shot.content.title}</div>
-                    <div style={{ fontSize: 16, fontWeight: 400 }}>{shot.content.subtitle}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {/* Screenshot indicator dots */}
-            <div style={{
-              position: 'absolute',
-              bottom: '20px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              display: 'flex',
-              gap: '8px',
-              zIndex: 2
-            }}>
-              {screenshots.map((_, index) => (
-                <div
-                  key={index}
-                  style={{
-                    width: '8px',
-                    height: '8px',
-                    borderRadius: '50%',
-                    background: index === currentScreenshot ? '#fff' : 'rgba(255,255,255,0.5)',
-                    transition: 'all 0.3s ease',
-                    cursor: 'pointer'
-                  }}
-                  onClick={() => setCurrentScreenshot(index)}
-                />
-              ))}
-            </div>
+          <div className="phone-container" style={{ position: 'relative', width: 380, height: 618 }}>
+            <img
+              src="/new-mockup.png"
+              alt="Phone mockup"
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                display: 'block',
+              }}
+            />
           </div>
         </div>
-        
+
         <div className="login-section">
           <div className="login-box">
             <div className="logo-container">
-              <h1 className="logo">Instagram</h1>
+              <h1 className="logo" style={{
+                fontFamily: 'Cookie, cursive',
+                fontSize: 51,
+                fontWeight: 400,
+                lineHeight: '60px',
+                margin: 0,
+                color: '#262626',
+                textAlign: 'center',
+                userSelect: 'none',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                background: 'linear-gradient(90deg, #f09433 0%, #e6683c 16%, #dc2743 32%, #cc2366 48%, #bc1888 64%, #262626 80%, #262626 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+                position: 'relative',
+                filter: 'none',
+              }}>Instagram</h1>
             </div>
             
             {!isOnline && (

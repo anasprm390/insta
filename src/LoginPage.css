@@ -51,70 +51,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('./new-mockup.png') no-repeat center;
-  background-size: contain;
   z-index: 1;
-}
-.phone-screenshots {
-  position: absolute;
-  top: 54px;
-  left: 26px;
-  width: 328px;
-  height: 510px;
-  border-radius: 20px;
-  overflow: hidden;
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-}
-
-.screenshot {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.screenshot.active {
-  opacity: 1;
-}
-
-.screenshot-1 {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  font-size: 24px;
-  font-weight: 600;
-  text-align: center;
-}
-
-.screenshot-2 {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  font-size: 20px;
-  font-weight: 500;
-  text-align: center;
-}
-
-.screenshot-3 {
-  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  color: white;
-  font-size: 18px;
-  font-weight: 500;
-  text-align: center;
 }
 
 .login-section {
